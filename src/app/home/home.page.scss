@@ -29,7 +29,7 @@
 }
 
 .auth-form ion-grid,
-.auth-form ion-row {
+.auth-form ion-row {  
   height: 100%;
   justify-content: center;
 }
@@ -38,15 +38,15 @@
   display: block;
   text-align: center;
   padding-bottom: 10px;
-  color: white;
 }
 
 .card-logo{
   display: block;
   text-align: center;
-
 }
 
 .title{
   color:white;
+  text-align: center;
+  background-color: rgba($color: #2AD5E5, $alpha: 0.8);
 }
