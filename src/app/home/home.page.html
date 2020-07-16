@@ -1,20 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="auth-form">
+  <ion-card class="card-logo">
+    <ion-card-header>
+      <ion-card-title class="title">COVIDistance</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img src="../../assets/images/blue.gif" alt="">
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center>
+        <ion-button [routerLink]="['/registration']" expand="block" color="primary">Registrate</ion-button>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+        <span class="divider line one-line">o</span>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+        <span class="already">Ya tienes usuario?</span>
+
+        <ion-button [routerLink]="['/login']" expand="block" color="medium">Ingresar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
