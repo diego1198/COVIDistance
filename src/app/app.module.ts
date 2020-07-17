@@ -15,7 +15,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth'
 import { AngularFireModule } from '@angular/fire'
 
 import { firebase } from '../environments/environment'
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { firebase } from '../environments/environment'
             IonicModule.forRoot(),
             AppRoutingModule,
             AngularFireModule.initializeApp(firebase),
-            AngularFireAuthModule],
+            AngularFireAuthModule,
+            ReactiveFormsModule],
   providers: [
     StatusBar,
     SplashScreen,
