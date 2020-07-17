@@ -20,3 +20,49 @@
 .card-content{
     background-color: white;
 }
+
+.google{
+    --background: #DB4437;
+}
+
+.facebook{
+    --background: #4267B2;
+}
+
+.danger-text{
+    color: red;
+}
+
+.login-gif{
+    width: 280px;
+    height: 115px;
+}
+
+.divider {
+    display: flex;
+    
+    &:before,
+    &:after {
+      content: "";
+      flex: 1;
+    }
+  }
+
+  .line {
+    align-items: center;
+    margin: 1em -1em;
+    color: #cccccc;
+    
+    &:before,
+    &:after {
+      height: 1px;
+      margin: 0 1em;
+    }
+  } 
+  
+  .one-line {
+    &:before,
+    &:after {
+       background: #cccccc;
+    }
+  }
