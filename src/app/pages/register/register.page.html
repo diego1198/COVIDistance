@@ -13,7 +13,7 @@
       <ion-card-subtitle>Ingresa tus datos</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <form [formGroup]="registrationForm" (ngsubmit)="registerUser()">
+      <form [formGroup]="registrationForm" (submit)="registerUser()">
         <ion-list>
           <ion-item lines="full">
             <ion-label position="floating">Nombres:</ion-label>

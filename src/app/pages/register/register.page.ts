@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder,Validators } from '@angular/forms';
-import { EmailService } from '../../services/email.service'
-
+import { EmailService } from '../../services/email.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { EmailService } from '../../services/email.service'
 })
 export class RegisterPage implements OnInit {
 
-  constructor(private authEmail:EmailService,private formBuilder: FormBuilder) { }
+  constructor(private authEmail:EmailService,private formBuilder: FormBuilder,private router:Router) { }
 
   registrationForm = this.formBuilder.group({
     name:['',[Validators.required,Validators.maxLength(50)]],
@@ -67,15 +67,15 @@ export class RegisterPage implements OnInit {
   }
 
   registerUser(){
-    console.log(this.registrationForm.value)
-    /* try {
-      const user = this.authEmail.register( this.getEmail(),this.getPassword())
+    try {
+      const user = this.authEmail.register(this.registrationForm.controls['email'].value,
+                                           this.registrationForm.controls['password'].value)
       if(user){
-        console.log(user)
+        
       }
     } catch (error) {
-      
-    } */
+      console.log(error)
+    }
     
   }
 
