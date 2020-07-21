@@ -1,9 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>scanner</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>scanner</ion-title>
+        <ion-button (click)="Scan()" slot="end">
+            <ion-icon name="Bluetooth"></ion-icon>
+            <p>Scan</p>
+        </ion-button>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-list>
+        <ion-card-content ion-item *ngFor="let device of devices">
+            <p>{{device.name || 'Desconocido'}}</p>
+            <p>{{device.id}}</p>
+            <p> RSSI: {{device.rssi}}</p>
+        </ion-card-content>
+    </ion-list>
 </ion-content>

@@ -16,18 +16,20 @@ import { AngularFireModule } from '@angular/fire'
 
 import { firebase } from '../environments/environment'
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { BLE } from '@ionic-native/ble/ngx';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, 
+    
             IonicModule.forRoot(),
             AppRoutingModule,
             AngularFireModule.initializeApp(firebase),
             AngularFireAuthModule,
             ReactiveFormsModule],
   providers: [
+    BLE,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

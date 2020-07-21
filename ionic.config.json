@@ -1,5 +1,7 @@
 {
   "name": "COVIDistance",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
