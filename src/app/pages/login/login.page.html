@@ -17,7 +17,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
-        <form action="">
+        <form>
           <ion-item class="input-item">
             <ion-label position="floating">Email <span class="danger-text">*</span>: </ion-label>
             <ion-input type="text" required [(ngModel)]="email" name="email"></ion-input>
@@ -30,7 +30,7 @@
   
           <ion-row>
             <ion-col>
-              <ion-button type="submit" color="app" expand="block">Entrar</ion-button>
+              <ion-button type="button" color="app" expand="block" (click)="loginEmail()">Entrar</ion-button>
             </ion-col>
           </ion-row>
         </form>

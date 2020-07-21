@@ -30,4 +30,9 @@ export class GoogleService {
     return userRef.set(data,{merge:true})
   }
 
+  isEmailVerified(user:User):boolean{
+    return user.emailVerified === true ? true : false;
+  }
+  
+
 }

@@ -60,6 +60,10 @@ export class EmailService {
     }
   }
 
+  isEmailVerified(user:User):boolean{
+    return user.emailVerified === true ? true : false;
+  }
+
   async resetPassword(email): Promise<void>{
     try {
       return this.authEmail.sendPasswordResetEmail(email,)

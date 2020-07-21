@@ -66,17 +66,24 @@ export class RegisterPage implements OnInit {
     return this.registrationForm.get('password');
   }
 
-  registerUser(){
+  async registerUser(){
     try {
-      const user = this.authEmail.register(this.registrationForm.controls['email'].value,
+      const user = await this.authEmail.register(this.registrationForm.controls['email'].value,
                                            this.registrationForm.controls['password'].value)
       if(user){
-        
+        this.redirectUser(true)
       }
     } catch (error) {
       console.log(error)
+    } 
+  }
+
+  redirectUser(isVerified:boolean){
+    if(isVerified){
+      this.router.navigate(['scanner']);
+    }else{
+      this.router.navigate(['verify-email']);
     }
-    
   }
 
 
