@@ -11,7 +11,7 @@
 <ion-content>
     <ion-list>
         <ion-card-content ion-item *ngFor="let device of devices">
-            <p>{{device.name || 'Desconocido'}}</p>
+            <p>{{(device.name)*-1 || 'Desconocido'}}</p>
             <p>{{device.id}}</p>
             <p> RSSI: {{device.rssi}}</p>
         </ion-card-content>
