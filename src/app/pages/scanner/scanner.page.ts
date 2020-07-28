@@ -7,12 +7,11 @@ import { BLE } from '@ionic-native/ble/ngx';
   styleUrls: ['./scanner.page.scss'],
 })
 export class ScannerPage {
-
+  displayString: any[]=[];
   devices:any[] = [];
-  
+ 
   constructor(private ble:BLE,private ngZone: NgZone) 
   {
-    
   }
 
   Scan(){
@@ -20,7 +19,10 @@ export class ScannerPage {
     this.ble.scan([],15).subscribe(
       device => this.onDeviceDiscovered(device)
     );
+    
+    
   }
+  
   
   onDeviceDiscovered(device){
     console.log('Discovered' + JSON.stringify(device,null,2));
@@ -28,6 +30,15 @@ export class ScannerPage {
       this.devices.push(device)
       console.log(device)
     })
+    for(let i=0; i<this.devices.length; i++){
+      if(this.devices[i].rssi>-51){
+        this.displayString.push("Muy cerca");
+      }else if(this.devices[i].rssi>-65){
+        this.displayString.push("Cerca");
+      }else{
+        this.displayString.push("Lejos");
+      }
+    }
   }
   
 }
