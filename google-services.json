@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "517520694921",
+    "firebase_url": "https://covidistance-48665.firebaseio.com",
+    "project_id": "covidistance-48665",
+    "storage_bucket": "covidistance-48665.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517520694921:android:0882041bf2c6df7c7ef058",
+        "android_client_info": {
+          "package_name": "com.covid.notificaciones"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517520694921-maq5r64af70q8vtcb0a8d3s2fv23r118.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBae-piTr0x8KMDr2w7oefzruvhO5Ly_j8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517520694921-maq5r64af70q8vtcb0a8d3s2fv23r118.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
