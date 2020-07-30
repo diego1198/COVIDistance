@@ -48,7 +48,7 @@ export class ScannerPage {
         };
         this.cercanos.push(cercania);
 
-      } else if (device.rssi > -65) {
+      } else if (device.rssi > -69) {
         this.displayString[this.devices.length - 1] = ("Cerca");
         aux = ("Cerca");
         let cercania: dispositivos;
