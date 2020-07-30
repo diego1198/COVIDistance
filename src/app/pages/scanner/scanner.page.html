@@ -9,7 +9,6 @@
 </ion-header>
 
 <ion-content>
-
     <ion-list>
         <ion-card-content ion-item *ngFor="let item of dispositivos1">
             <p>{{item.name || 'Desconocido'}}</p>
@@ -19,6 +18,15 @@
         </ion-card-content>
 
     </ion-list>
+    <p> Cercanos:</p>
+    <ion-list>
+        <ion-card-content ion-item *ngFor="let item of cercanos">
+            <p>{{item.name || 'Desconocido'}}</p>
+            <p>{{item.id}}</p>
+            <p> RSSI: {{item.rssi}}</p>
+            <p>Cercania:{{item.cercania}}</p>
+        </ion-card-content>
 
+    </ion-list>
 
 </ion-content>
