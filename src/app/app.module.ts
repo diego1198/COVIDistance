@@ -17,6 +17,7 @@ import { AngularFireModule } from '@angular/fire'
 import { firebase } from '../environments/environment'
 import { ReactiveFormsModule } from '@angular/forms';
 import { BLE } from '@ionic-native/ble/ngx';
+import { LocalNotifications } from "@ionic-native/local-notifications/ngx";
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +33,7 @@ import { BLE } from '@ionic-native/ble/ngx';
     BLE,
     StatusBar,
     SplashScreen,
+    LocalNotifications,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

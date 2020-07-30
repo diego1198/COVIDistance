@@ -5,6 +5,7 @@ import { EmailService } from '../../services/email.service'
 import { GoogleService } from '../../services/google.service'
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
