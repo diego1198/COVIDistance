@@ -33,7 +33,7 @@ export class LocalNotificationService {
     this.notification.schedule({
       id: 1,
       title: 'COVIDistance',
-      text: "Existen personas muy cerca\n"+this.text,
+      text: "¡Existen personas muy cerca!\n"+this.text,
       led: 'FF0000',
       icon: this.iconUrl,
       sound: this.setSound(),
