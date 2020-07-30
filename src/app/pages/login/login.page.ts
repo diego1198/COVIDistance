@@ -28,7 +28,7 @@ export class LoginPage implements OnInit {
       const user = await this.authEmail.login(this.email, this.password);
       if (user) {
         const isVerified = this.authEmail.isEmailVerified(user);
-        this.redirectUser(true)
+        this.redirectUser(isVerified)
       }
     } catch (error) {
       console.log(error)
