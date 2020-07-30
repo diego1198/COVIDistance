@@ -12,13 +12,14 @@ export class ScannerPage {
   displayString: any[] = [];
   devices: any[] = [];
   dispositivos1: dispositivos[] = [];
-  cercanos:dispositivos[]=[];
-
+   public cercanos:dispositivos[]=[];
+   ocultar1: boolean     = true;
   constructor(private ble: BLE, private ngZone: NgZone,private notification: LocalNotificationService) {
   }
 
   Scan() {
     
+    this.ocultar1=false;
     this.devices = [];
     this.displayString = [];
     this.dispositivos1 = [];
@@ -70,7 +71,8 @@ export class ScannerPage {
         cercania: aux
       };
       this.dispositivos1.push(dispositivo);
-    })
+    }
+    )
     this.notification.scheduleNotification(this.cercanos);
   }
 

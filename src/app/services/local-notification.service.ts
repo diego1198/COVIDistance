@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Platform, AlertController } from '@ionic/angular';
-import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { LocalNotifications, ELocalNotificationTriggerUnit } from '@ionic-native/local-notifications/ngx';
 import { dispositivos } from '../shared/dispositivos.interface';
 
 @Injectable({
@@ -23,7 +23,6 @@ export class LocalNotificationService {
           this.showAlert(res.title,res.text,msg)
         });
       })
-
     }
 
   scheduleNotification(devices:dispositivos[]){
@@ -38,8 +37,14 @@ export class LocalNotificationService {
       led: 'FF0000',
       icon: this.iconUrl,
       sound: this.setSound(),
-      foreground: true
+      foreground: true,
+      trigger:{
+        in:1,
+        unit: ELocalNotificationTriggerUnit.SECOND
+      }
+
     })
+
   }
 
   showAlert(header,sub,msg){
