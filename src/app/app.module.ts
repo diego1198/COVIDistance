@@ -18,6 +18,7 @@ import { firebase } from '../environments/environment'
 import { ReactiveFormsModule } from '@angular/forms';
 import { BLE } from '@ionic-native/ble/ngx';
 import { LocalNotifications } from "@ionic-native/local-notifications/ngx";
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,10 +31,12 @@ import { LocalNotifications } from "@ionic-native/local-notifications/ngx";
             AngularFireAuthModule,
             ReactiveFormsModule],
   providers: [
+    
     BLE,
     StatusBar,
     SplashScreen,
     LocalNotifications,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

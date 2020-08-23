@@ -1,7 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { BLE } from '@ionic-native/ble/ngx';
 import { dispositivos } from '../../shared/dispositivos.interface';
-
+import {  Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { LocalNotificationService } from '../../services/local-notification.service';
 @Component({
   selector: 'app-scanner',
@@ -14,11 +14,24 @@ export class ScannerPage {
   dispositivos1: dispositivos[] = [];
    public cercanos:dispositivos[]=[];
    ocultar1: boolean     = true;
-  constructor(private ble: BLE, private ngZone: NgZone,private notification: LocalNotificationService) {
+   lat:number;
+  lon:number;
+  total:string;
+  ocultar2: boolean     = true;
+
+  constructor(private ble: BLE, private ngZone: NgZone,private notification: LocalNotificationService, public geolocation: Geolocation) {
+    this.getGeolocation();
+    this.ocultar2=false;
+  }
+  getGeolocation(){
+    this.geolocation.getCurrentPosition().then((geoposition: Geoposition)=>{
+      this.lat = geoposition.coords.latitude;
+      this.lon = geoposition.coords.longitude;
+    });
   }
 
   Scan() {
-    
+    this.ocultar2=true;
     this.ocultar1=false;
     this.devices = [];
     this.displayString = [];

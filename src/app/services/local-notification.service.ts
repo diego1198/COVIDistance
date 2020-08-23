@@ -8,7 +8,6 @@ import { dispositivos } from '../shared/dispositivos.interface';
 })
 export class LocalNotificationService {
 
-  iconUrl = "https://images.vexels.com/media/users/3/193114/isolated/preview/0be3590284a8dc5f1646b64816e2eb6e-covid-stop-badge-by-vexels.png";
   text = "";
   constructor(private plt:Platform,private notification:LocalNotifications,
     private alertCtrl: AlertController) { 
@@ -27,22 +26,20 @@ export class LocalNotificationService {
 
   scheduleNotification(devices:dispositivos[]){
     this.text = "";
-    devices.forEach(device =>{
-      this.text += "Dispositivo:"+device.name+"\n Cercania:"+device.cercania+"\n";
+    devices.forEach(device =>{this.text += "Dispositivo:"+device.name+"\n Cercania:"+device.cercania+"\n";
     })
     this.notification.schedule({
       id: 1,
       title: 'COVIDistance',
       text: "¡Existen personas muy cerca!\n"+this.text,
       led: 'FF0000',
-      icon: this.iconUrl,
+      smallIcon : "res://mipmap-ldpi/ic_launcher.png",
       sound: this.setSound(),
       foreground: true,
       trigger:{
         in:1,
         unit: ELocalNotificationTriggerUnit.SECOND
       }
-
     })
 
   }
